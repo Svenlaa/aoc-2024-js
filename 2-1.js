@@ -19,10 +19,12 @@ const boolReports = reports.map((report) => {
         const diff = currentLevel - previousLevel;
         if (isAscending && diff < 0) return false;
         if (!isAscending && diff > 0) return false;
+
         const normalizedDiff = diff > 0 ? diff : -diff;
         if (normalizedDiff < 1) return false;
         if (normalizedDiff > 3) return false;
     }
+
     return true;
 });
 
